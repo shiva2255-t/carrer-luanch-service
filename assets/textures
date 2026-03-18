@@ -1,0 +1,34 @@
+/**
+ * Career Launch Services - Texture Generator
+ * Creates a "Brushed Metal/Noise" texture for the 3D plinth.
+ */
+
+const TextureFactory = {
+    // Generates a subtle noise pattern to break up flat colors
+    createNoiseTexture(size = 256) {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = size;
+        const ctx = canvas.getContext('2d');
+
+        const imageData = ctx.createImageData(size, size);
+        const data = imageData.data;
+
+        for (let i = 0; i < data.length; i += 4) {
+            // Create a random grey value
+            const noise = Math.random() * 20; 
+            data[i] = noise;     // Red
+            data[i + 1] = noise; // Green
+            data[i + 2] = noise; // Blue
+            data[i + 3] = 255;   // Opacity
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+        return texture;
+    }
+};
+
+// Export for use in 3d-render.js
+const noiseMap = TextureFactory.createNoiseTexture();

@@ -1,0 +1,86 @@
+/**
+ * Career Launch Services - Core Interactions
+ * 2026 Senior Designer Standard
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. SMART REVEAL ON SCROLL
+    // This triggers the animations we defined in animations.css 
+    // only when the user reaches that section.
+    const observerOptions = {
+        threshold: 0.25 // Trigger when 25% of the element is visible
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-animated');
+                // Once animated, we can stop observing to save resources
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Target the Hero titles and Service cards
+    const revealElements = document.querySelectorAll('.word-reveal, .glass-card, .problem-section');
+    revealElements.forEach(el => revealObserver.observe(el));
+
+
+    // 2. THE ATS SCANNER LOGIC
+    // Synchronizing the scan-line with the text changes
+    const scanner = document.querySelector('.ats-scanner');
+    const rejectedStamp = document.querySelector('.status-stamp--rejected');
+    const shortlistedStamp = document.querySelector('.status-stamp--shortlisted');
+    const trapItems = document.querySelectorAll('.trap-item');
+
+    if (scanner) {
+        // We simulate the "Processing" phase
+        setInterval(() => {
+            // Every 8 seconds (matching our CSS animation cycle)
+            // We can add logic here to flicker the 'trap-items' 
+            // to show they are being "fixed"
+            trapItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.borderColor = "#00ff88"; // Turn gold to green
+                    item.querySelector('span').innerHTML = "✓"; // Change X to Check
+                }, index * 1000);
+            });
+
+            // Reset after the cycle
+            setTimeout(() => {
+                trapItems.forEach(item => {
+                    item.style.borderColor = "var(--gold-primary)";
+                    item.querySelector('span').innerHTML = "✕";
+                });
+            }, 7000);
+        }, 8000);
+    }
+
+
+    // 3. SMOOTH SCROLL FOR CTAs
+    // Ensures clicking "View Services" feels like a premium glide
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+
+    // 4. MOUSE-TRACKING GLOW (Optional Luxury Detail)
+    // Makes the glass cards react to your mouse movement
+    const glassCards = document.querySelectorAll('.glass-card');
+    document.addEventListener('mousemove', (e) => {
+        glassCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+});

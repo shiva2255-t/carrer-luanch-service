@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Career Launch Services - Professional Resume Writing, LinkedIn Optimization, and Job Search Strategy.">
+    <title>Career Launch Services | Propel Your Career Forward</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/glassmorphism.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero__3d-container" id="compass-canvas">
+            <span class="hero__tagline">Career Launch Service 3D</span>
+        </div>
+
+        <h1 class="hero__title">
+            <span class="word-reveal">Stop Applying in the Dark.</span><br>
+            <span class="word-reveal delay-1">Start Landing Interviews.</span>
+        </h1>
+
+        <div class="hero__cta-group">
+            <a href="#contact" class="btn btn--primary">Book Your Transformation</a>
+            <a href="#services" class="btn btn--secondary">View Services</a>
+        </div>
+        
+        <div class="scroll-indicator"></div>
+    </header>
+
+    <main>
+        <section class="problem-section">
+            <h2 class="section-label">The Problem</h2>
+            <div class="problem-grid">
+                <div class="trap-list">
+                    <div class="trap-item" data-status="pending">
+                        <span>Generic Trap</span> <i class="status-icon">✕</i>
+                    </div>
+                    <div class="trap-item" data-status="pending">
+                        <span>Keyword Gap</span> <i class="status-icon">✕</i>
+                    </div>
+                    <div class="trap-item" data-status="pending">
+                        <span>Wall of Text</span> <i class="status-icon">✕</i>
+                    </div>
+                </div>
+
+                <div class="ats-scanner">
+                    <div class="scanner-window">
+                        <div class="scan-line"></div>
+                        <div class="resume-preview">
+                            <div class="status-stamp status-stamp--rejected">REJECTED</div>
+                            <div class="status-stamp status-stamp--shortlisted">SHORTLISTED</div>
+                        </div>
+                    </div>
+                    <p class="scanner-label">ATS Scanning Engine v2.6</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2 class="section-label">Professional Services</h2>
+            <div class="services-grid">
+                
+                <div class="service-card glass-card hover-zoom">
+                    <div class="service-card__icon">
+                        <img src="assets/svgs/resume-check.svg" alt="Resume Icon">
+                    </div>
+                    <div class="tag-group">
+                        <span class="tag">ATS-Ready</span>
+                        <span class="tag">Custom Design</span>
+                    </div>
+                    <h3>ATS-Optimized Resumes</h3>
+                    <p>Strategic keyword integration and formatting that beats the bots and impresses humans.</p>
+                </div>
+
+                <div class="service-card glass-card hover-zoom">
+                    <div class="service-card__icon">
+                        <img src="assets/svgs/linkedin-icon.svg" alt="LinkedIn Icon">
+                    </div>
+                    <div class="tag-group">
+                        <span class="tag">Personal Brand</span>
+                        <span class="tag">Inbound Leads</span>
+                    </div>
+                    <h3>LinkedIn Profile Mastery</h3>
+                    <p>Transform your profile into a high-converting landing page that attracts recruiters.</p>
+                </div>
+
+                <div class="service-card glass-card hover-zoom full-width">
+                    <div class="service-card__icon">
+                        <img src="assets/svgs/compass.svg" alt="Strategy Icon">
+                    </div>
+                    <div class="service-card__content">
+                        <div class="tag-group">
+                            <span class="tag">Strategy</span>
+                            <span class="tag">1-on-1 Coaching</span>
+                        </div>
+                        <h3>Job Search Strategy & Guidance</h3>
+                        <p>A comprehensive roadmap to navigate the modern job market, from networking to final negotiation.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <h2 class="section-label">Connect With Us</h2>
+        <div class="footer__main">
+            <div class="contact-icons">
+                <a href="tel:9110416988" class="contact-circle">📞</a>
+                <a href="mailto:careerlaunchservice@gmail.com" class="contact-circle">✉️</a>
+                <a href="https://linkedin.com/in/careerlaunch-services-ba53303b2" target="_blank" class="contact-circle">in</a>
+            </div>
+
+            <div class="footer__cta">
+                <p>Ready to Propel Your Career <span>Forward?</span></p>
+                <button class="btn btn--gold-glow">DM Us to Get Started 🚀</button>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Career Launch Services. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="js/3d-render.js"></script>
+    <script src="js/textures.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

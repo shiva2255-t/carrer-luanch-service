@@ -1,0 +1,151 @@
+/* --- 1. THE HERO (SPLIT SCREEN) --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+    background: radial-gradient(circle at center, #1b2430 0%, #12181f 100%);
+}
+
+.hero__3d-container {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Staggered word styling */
+.hero__title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.hero__cta-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* --- 2. THE PROBLEM SECTION (FLEX LAYOUT) --- */
+.problem-section {
+    padding: 100px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Matches your sketch: labels left, scanner right */
+    gap: 50px;
+    align-items: center;
+}
+
+.trap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trap-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--gold-primary);
+}
+
+/* --- 3. THE SERVICES BENTO GRID --- */
+.services {
+    padding: 100px 10%;
+    background: #0f141a;
+}
+
+.services-grid {
+    display: grid;
+    /* Creating a 2-column grid that collapses on mobile */
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(250px, auto);
+    gap: 25px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Making the 3rd card span both columns like in your sketch */
+.full-width {
+    grid-column: span 2;
+    flex-direction: row; /* Horizontal layout for the big bottom card */
+    align-items: center;
+}
+
+.service-card__icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+/* --- 4. FOOTER & CONTACT --- */
+.footer {
+    padding: 80px 10%;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.contact-circle:hover {
+    background: var(--gold-primary);
+}
+
+/* --- 5. RESPONSIVENESS (MOBILE) --- */
+@media (max-width: 992px) {
+    .problem-grid, .services-grid, .footer__main {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .full-width {
+        grid-column: span 1;
+        flex-direction: column;
+    }
+    
+    .contact-icons {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+}

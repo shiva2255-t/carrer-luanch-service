@@ -1,0 +1,58 @@
+:root {
+    /* Brand Palette from your sketch */
+    --bg-dark: #12181f;
+    --navy-deep: #1b2430;
+    --gold-primary: #c5a059;
+    --gold-glow: rgba(197, 160, 89, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Section Labels (The thin gold text in your sketch) */
+.section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--gold-primary);
+    letter-spacing: 4px;
+    border-top: 1px solid var(--gold-glow);
+    display: inline-block;
+    padding-top: 10px;
+    margin: 40px 0;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background: var(--gold-primary);
+    color: var(--navy-deep);
+}
+
+.btn--gold-glow {
+    background: transparent;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    box-shadow: 0 0 15px var(--gold-glow);
+}
